@@ -19,7 +19,7 @@ export default function TimeToSafety() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {zones.map((z) => (
-          <div key={z.zone_id} className="rounded-md border border-panelborder bg-panel2 p-4">
+          <div key={z.zone_id} className="rounded-sm border border-panelborder bg-panel2 p-4">
             <div className="flex items-center justify-between mb-3">
               <span className="text-sm font-bold">{z.name}</span>
               <StatusPill status={z.tts_status} small />
@@ -41,7 +41,7 @@ export default function TimeToSafety() {
         ))}
       </div>
 
-      <div className="rounded-md border border-panelborder bg-panel2 p-4 text-xs text-muted">
+      <div className="rounded-sm border border-panelborder bg-panel2 p-4 text-xs text-muted">
         <div className="text-ink font-semibold mb-1">Configurable bands (demo thresholds)</div>
         &lt;5min CRITICAL · 5–15min HIGH RISK · 15–30min WARNING · &gt;30min SAFE
       </div>

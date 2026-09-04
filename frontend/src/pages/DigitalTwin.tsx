@@ -19,7 +19,7 @@ export default function DigitalTwin() {
       <CesiumMap layers={layers} />
       <EntityInfoPanel />
 
-      <div className="absolute top-4 left-4 z-10 w-56 rounded-md border border-panelborder bg-panel/90 backdrop-blur p-3">
+      <div className="absolute top-4 left-4 z-10 w-56 rounded-sm border border-panelborder bg-panel p-3">
         <div className="text-[10px] font-bold tracking-widest text-muted mb-2">MAP LAYERS</div>
         <div className="space-y-1.5">
           {(Object.keys(LAYER_LABELS) as (keyof MapLayers)[]).map((key) => (

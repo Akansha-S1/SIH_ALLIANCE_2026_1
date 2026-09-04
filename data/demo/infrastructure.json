@@ -1,8 +1,56 @@
 [
-  {"id": "bridge_04", "type": "bridge", "name": "Bridge 04", "lat": 30.3500, "lon": 78.7735, "importance": "high", "related_road": "R05"},
-  {"id": "hospital_01", "type": "hospital", "name": "Hospital 01 - Kotwara", "lat": 30.3230, "lon": 78.7680, "importance": "critical", "near_zone": "zone_c"},
-  {"id": "hospital_02", "type": "hospital", "name": "Hospital 02 - Devnagar", "lat": 30.3760, "lon": 78.7870, "importance": "critical", "near_zone": "zone_b"},
-  {"id": "school_01", "type": "school", "name": "School 01 - Rampur", "lat": 30.4090, "lon": 78.7880, "importance": "medium", "near_zone": "zone_a"},
-  {"id": "school_02", "type": "school", "name": "School 02 - Ganeshpur", "lat": 30.2760, "lon": 78.7610, "importance": "medium", "near_zone": "zone_d"},
-  {"id": "power_01", "type": "power", "name": "Power Substation 01 - Kotwara", "lat": 30.3200, "lon": 78.7630, "importance": "high", "near_zone": "zone_c"}
+  {
+    "id": "bridge_04",
+    "type": "bridge",
+    "name": "Bridge 04",
+    "lat": 27.3394,
+    "lon": 83.9004,
+    "importance": "high",
+    "related_road": "R05"
+  },
+  {
+    "id": "hospital_01",
+    "type": "hospital",
+    "name": "Hospital 01 - Kotwara",
+    "lat": 27.3124,
+    "lon": 83.8949,
+    "importance": "critical",
+    "near_zone": "zone_c"
+  },
+  {
+    "id": "hospital_02",
+    "type": "hospital",
+    "name": "Hospital 02 - Devnagar",
+    "lat": 27.3654,
+    "lon": 83.9139,
+    "importance": "critical",
+    "near_zone": "zone_b"
+  },
+  {
+    "id": "school_01",
+    "type": "school",
+    "name": "School 01 - Rampur",
+    "lat": 27.3984,
+    "lon": 83.9149,
+    "importance": "medium",
+    "near_zone": "zone_a"
+  },
+  {
+    "id": "school_02",
+    "type": "school",
+    "name": "School 02 - Ganeshpur",
+    "lat": 27.2654,
+    "lon": 83.8879,
+    "importance": "medium",
+    "near_zone": "zone_d"
+  },
+  {
+    "id": "power_01",
+    "type": "power",
+    "name": "Power Substation 01 - Kotwara",
+    "lat": 27.3094,
+    "lon": 83.8899,
+    "importance": "high",
+    "near_zone": "zone_c"
+  }
 ]

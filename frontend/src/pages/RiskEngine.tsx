@@ -16,7 +16,7 @@ export default function RiskEngine() {
         No unverified accuracy claims are made; this is a DEMO decision-support model.
       </p>
 
-      <div className="rounded-md border border-panelborder bg-panel2 p-6 flex items-center gap-8">
+      <div className="rounded-sm border border-panelborder bg-panel2 p-6 flex items-center gap-8">
         <div className="text-center">
           <div className="text-5xl font-extrabold mono" style={{ color: statusColor(fr.level) }}>{fmt(fr.score, 0)}</div>
           <div className="text-xs text-muted mt-1">FAILURE RISK / 100</div>
@@ -35,7 +35,7 @@ export default function RiskEngine() {
         </div>
       </div>
 
-      <div className="rounded-md border border-panelborder bg-panel2 p-4">
+      <div className="rounded-sm border border-panelborder bg-panel2 p-4">
         <div className="text-xs font-bold text-muted tracking-widest mb-3">FULL WEIGHTED BREAKDOWN</div>
         <div className="space-y-2">
           {fr.factors.map((f) => (
@@ -53,7 +53,7 @@ export default function RiskEngine() {
         </div>
       </div>
 
-      <div className="rounded-md border border-panelborder bg-panel2 p-4">
+      <div className="rounded-sm border border-panelborder bg-panel2 p-4">
         <div className="text-xs font-bold text-muted tracking-widest mb-3">MODEL ARCHITECTURE</div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs text-muted">
           <div className="rounded border border-panelborder p-3">

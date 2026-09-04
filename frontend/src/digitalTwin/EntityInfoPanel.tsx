@@ -88,7 +88,7 @@ export default function EntityInfoPanel() {
   if (!body) return null;
 
   return (
-    <div className="absolute top-4 right-4 w-72 rounded-md border border-panelborder bg-panel/95 backdrop-blur shadow-glow p-3 z-10">
+    <div className="absolute top-4 right-4 w-72 rounded-sm border border-panelborder bg-panel shadow-glow p-3 z-10">
       <div className="flex items-center justify-between mb-2">
         <div className="text-xs font-bold tracking-widest text-accent">{title}</div>
         <button onClick={close} className="text-muted hover:text-ink text-sm leading-none">✕</button>

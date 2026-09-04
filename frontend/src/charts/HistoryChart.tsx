@@ -2,7 +2,7 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianG
 
 export default function HistoryChart({ title, data, unit, color = "#22d3ee" }: { title: string; data: { t: number; v: number }[]; unit?: string; color?: string }) {
   return (
-    <div className="rounded-md border border-panelborder bg-panel2 p-3">
+    <div className="rounded-sm border border-panelborder bg-panel2 p-3">
       <div className="text-[11px] font-bold tracking-wide text-muted mb-2 uppercase">{title}{unit ? ` (${unit})` : ""}</div>
       <ResponsiveContainer width="100%" height={140}>
         <LineChart data={data} margin={{ top: 4, right: 8, left: 0, bottom: 0 }}>

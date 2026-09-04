@@ -1,4 +1,10 @@
-export const API_BASE = (import.meta as any).env?.VITE_API_BASE || "http://localhost:8000";
+// Default to whatever host the page itself was loaded from (LAN IP or localhost)
+// so a phone hitting http://<lan-ip>:5173 automatically talks to http://<lan-ip>:8000
+// instead of a hardcoded "localhost" that would resolve to the phone itself.
+const inferredHost = typeof window !== "undefined" ? window.location.hostname : "localhost";
+const BACKEND_PORT = (import.meta as any).env?.VITE_BACKEND_PORT || "8000";
+
+export const API_BASE = (import.meta as any).env?.VITE_API_BASE || `http://${inferredHost}:${BACKEND_PORT}`;
 export const WS_URL = (import.meta as any).env?.VITE_WS_URL || API_BASE.replace(/^http/, "ws") + "/ws/live";
 
 async function get<T>(path: string): Promise<T> {

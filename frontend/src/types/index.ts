@@ -12,6 +12,7 @@ export interface SensorCard {
   normal_max: number;
   warning_max: number;
   sparkline: number[];
+  source: "LIVE" | "CACHED" | "SIMULATED";
 }
 
 export interface HealthFactor {
@@ -135,6 +136,7 @@ export interface LiveState {
   running: boolean;
   speed: number;
   breach_stage: "NONE" | "PARTIAL" | "MAJOR";
+  water_data_source: "LIVE" | "CACHED" | "SIMULATED";
   sensors: SensorCard[];
   dam_health: DamHealth;
   failure_risk: FailureRisk;

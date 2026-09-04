@@ -315,5 +315,5 @@ export default function CesiumMap({ compact = false, layers }: { compact?: boole
     infraEntities.current.forEach((e) => (e.show = layers.infrastructure));
   }, [layers]);
 
-  return <div ref={containerRef} className={compact ? "w-full h-full rounded-md overflow-hidden" : "w-full h-full"} />;
+  return <div ref={containerRef} className={compact ? "w-full h-full rounded-sm overflow-hidden" : "w-full h-full"} />;
 }

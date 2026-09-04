@@ -31,6 +31,9 @@ from app.services.shelters import build_shelter_states, recommend_shelter_for_zo
 from app.services.structural_health import compute_health
 from app.services.time_to_safety import compute_time_to_safety
 from app.services.event_log import event_log
+from app.services.water_data_provider import water_data_cache
+
+WATER_DATA_REFRESH_S = 60
 
 SCENARIOS = [
     "NORMAL",
@@ -82,6 +85,9 @@ class ScenarioEngine:
         ]
         self._series: dict[str, deque] = {k: deque(maxlen=500) for k in series_keys}
 
+        self._water_reading = water_data_cache.refresh()
+        self._water_task: asyncio.Task | None = None
+
         event_log.add("JALRAKSHAK AI system initialised - DEMO MODE (simulated sensors)", "SYSTEM")
 
     # -- lifecycle -----------------------------------------------------
@@ -91,6 +97,8 @@ class ScenarioEngine:
     async def start_loop(self) -> None:
         if self._task is None:
             self._task = asyncio.create_task(self._run())
+        if self._water_task is None:
+            self._water_task = asyncio.create_task(self._run_water_data_refresh())
 
     async def _run(self) -> None:
         while True:
@@ -99,6 +107,17 @@ class ScenarioEngine:
                 if self._broadcast_cb:
                     await self._broadcast_cb(self._state)
             await asyncio.sleep(REAL_TICK_SECONDS)
+
+    async def _run_water_data_refresh(self) -> None:
+        """Refreshes the real hydrology reading on its own slow cadence (not every
+        simulation tick) so an unreachable/slow external endpoint never blocks the
+        live sensor loop."""
+        while True:
+            await asyncio.sleep(WATER_DATA_REFRESH_S)
+            prev_source = self._water_reading.source
+            self._water_reading = water_data_cache.refresh()
+            if self._water_reading.source != prev_source:
+                event_log.add(f"Rainfall data source changed to {self._water_reading.source}", "DATA")
 
     # -- controls --------------------------------------------------------
     def set_scenario(self, scenario: str) -> None:
@@ -142,7 +161,8 @@ class ScenarioEngine:
     # -- main tick ---------------------------------------------------------
     def tick(self) -> dict:
         dt_min = SIM_MINUTES_PER_TICK * self.speed
-        readings = self.provider.tick(dt_min, self.scenario)
+        external_rainfall = self._water_reading.rainfall_mm_hr if self._water_reading.source in ("LIVE", "CACHED") else None
+        readings = self.provider.tick(dt_min, self.scenario, external_rainfall_mm_hr=external_rainfall)
         histories = {sid: self.provider.history(sid) for sid in SENSOR_IDS}
         deltas = {sid: self.provider.trend_pct(sid) for sid in SENSOR_IDS}
         trend_per_min = {sid: (deltas[sid] / dt_min if dt_min else 0.0) for sid in SENSOR_IDS}
@@ -186,7 +206,10 @@ class ScenarioEngine:
 
         self._log_transitions(readings, health, failure_risk, road_states, zone_states, alerts)
 
-        sensor_cards = build_sensor_cards(readings, deltas, histories)
+        sensor_sources = {sid: "SIMULATED" for sid in SENSOR_IDS}
+        if external_rainfall is not None:
+            sensor_sources["rainfall_mm_hr"] = self._water_reading.source
+        sensor_cards = build_sensor_cards(readings, deltas, histories, sensor_sources)
         worst_zone = self._worst_zone(zone_states)
 
         summary = self._build_summary(health, failure_risk, readings, worst_zone)
@@ -199,6 +222,7 @@ class ScenarioEngine:
             "running": self.running,
             "speed": self.speed,
             "breach_stage": self.provider.breach_stage_label(),
+            "water_data_source": self._water_reading.source,
             "sensors": sensor_cards,
             "dam_health": health,
             "failure_risk": failure_risk,

@@ -14,7 +14,7 @@ export default function Shelters() {
         {live.shelters.map((s) => {
           const pct = Math.round((s.occupancy / s.capacity) * 100);
           return (
-            <div key={s.shelter_id} className="rounded-md border border-panelborder bg-panel2 p-4">
+            <div key={s.shelter_id} className="rounded-sm border border-panelborder bg-panel2 p-4">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm font-bold">{s.name}</span>
                 <StatusPill status={s.status === "FULL" ? "CRITICAL" : "NORMAL"} small />
@@ -48,7 +48,7 @@ export default function Shelters() {
         })}
       </div>
 
-      <div className="rounded-md border border-panelborder bg-panel2 p-4">
+      <div className="rounded-sm border border-panelborder bg-panel2 p-4">
         <h2 className="text-sm font-bold tracking-wide mb-3">ZONE → RECOMMENDED SHELTER</h2>
         <table className="w-full text-xs">
           <thead>

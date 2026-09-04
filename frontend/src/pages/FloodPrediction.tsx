@@ -20,7 +20,7 @@ export default function FloodPrediction() {
         </div>
       </div>
 
-      <div className="rounded-md border border-panelborder bg-panel2 overflow-x-auto">
+      <div className="rounded-sm border border-panelborder bg-panel2 overflow-x-auto">
         <table className="w-full text-xs">
           <thead>
             <tr className="text-muted text-left border-b border-panelborder">

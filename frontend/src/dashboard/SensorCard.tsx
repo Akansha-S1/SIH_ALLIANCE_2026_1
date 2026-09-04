@@ -1,5 +1,6 @@
 import Sparkline from "../components/Sparkline";
 import StatusPill from "../components/StatusPill";
+import DataSourceBadge from "../components/DataSourceBadge";
 import { statusColor, fmt } from "../utils/status";
 import type { SensorCard as SensorCardType } from "../types";
 
@@ -8,10 +9,13 @@ export default function SensorCard({ s }: { s: SensorCardType }) {
   const trendColor = s.trend === "RISING" ? "#f97316" : s.trend === "FALLING" ? "#38bdf8" : "#7286a3";
 
   return (
-    <div className="rounded-md border border-panelborder bg-panel2 p-3.5 flex flex-col gap-2">
+    <div className="rounded-sm border border-panelborder bg-panel2 p-3.5 flex flex-col gap-2">
       <div className="flex items-center justify-between">
         <span className="text-[11px] font-bold tracking-wide text-muted uppercase">{s.label}</span>
-        <StatusPill status={s.status} small />
+        <div className="flex items-center gap-2">
+          <DataSourceBadge source={s.source} small />
+          <StatusPill status={s.status} small />
+        </div>
       </div>
 
       <div className="flex items-end justify-between">

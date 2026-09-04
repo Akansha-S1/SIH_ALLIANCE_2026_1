@@ -45,7 +45,7 @@ export default function RiskPanel() {
       </div>
 
       {live && (
-        <div className="rounded-md border border-panelborder bg-panel2 p-3">
+        <div className="rounded-sm border border-panelborder bg-panel2 p-3">
           <div className="text-[10px] font-bold tracking-widest text-muted mb-1.5">CURRENT SITUATION</div>
           <div className="text-xs space-y-1.5">
             <div className="flex justify-between"><span className="text-muted">Dam</span><StatusPill status={s?.dam_health_label || "NORMAL"} small /></div>

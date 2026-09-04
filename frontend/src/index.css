@@ -4,15 +4,34 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+:root,
+:root[data-theme="dark"] {
   color-scheme: dark;
+  --color-bg: 6 10 18;
+  --color-panel: 11 18 32;
+  --color-panel2: 15 26 44;
+  --color-panelborder: 28 43 66;
+  --color-ink: 201 214 232;
+  --color-muted: 114 134 163;
+  --color-accent: 34 211 238;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: 241 244 248;
+  --color-panel: 255 255 255;
+  --color-panel2: 246 248 251;
+  --color-panelborder: 210 217 229;
+  --color-ink: 22 29 42;
+  --color-muted: 90 103 125;
+  --color-accent: 3 105 138;
 }
 
 html, body, #root {
   height: 100%;
   margin: 0;
-  background: #060a12;
-  color: #c9d6e8;
+  background: rgb(var(--color-bg));
+  color: rgb(var(--color-ink));
   font-family: "Inter", system-ui, sans-serif;
 }
 

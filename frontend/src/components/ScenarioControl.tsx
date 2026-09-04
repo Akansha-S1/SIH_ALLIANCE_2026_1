@@ -19,7 +19,7 @@ export default function ScenarioControl() {
   const speed = live?.speed ?? 1;
 
   return (
-    <div className="rounded-md border border-panelborder bg-panel2 p-3">
+    <div className="rounded-sm border border-panelborder bg-panel2 p-3">
       <div className="text-[10px] font-bold tracking-widest text-muted mb-2">DEMO SCENARIO SIMULATOR</div>
 
       <div className="grid grid-cols-2 gap-1.5 mb-3">

@@ -6,7 +6,7 @@ function Card({ label, value, unit, color, sub }: { label: string; value: string
     <div className="flex-1 min-w-[130px] px-4 py-2.5 border-r border-panelborder last:border-r-0">
       <div className="text-[10px] font-semibold text-muted tracking-widest">{label}</div>
       <div className="flex items-baseline gap-1 mt-0.5">
-        <span className="text-2xl font-extrabold mono" style={{ color: color || "#c9d6e8" }}>
+        <span className={`text-2xl font-extrabold mono ${color ? "" : "text-ink"}`} style={color ? { color } : undefined}>
           {value}
         </span>
         {unit && <span className="text-xs text-muted font-medium">{unit}</span>}

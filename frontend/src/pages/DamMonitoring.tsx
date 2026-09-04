@@ -24,7 +24,7 @@ export default function DamMonitoring() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="rounded-md border border-panelborder bg-panel2 p-4">
+        <div className="rounded-sm border border-panelborder bg-panel2 p-4">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-sm font-bold tracking-wide">STRUCTURAL HEALTH ANALYSIS</h2>
             <div className="flex items-center gap-2">
@@ -47,7 +47,7 @@ export default function DamMonitoring() {
           </div>
         </div>
 
-        <div className="rounded-md border border-panelborder bg-panel2 p-4">
+        <div className="rounded-sm border border-panelborder bg-panel2 p-4">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-sm font-bold tracking-wide">ANOMALY DETECTION</h2>
             <span className="text-[10px] text-muted">rolling z-score, window≈60 samples</span>
@@ -71,7 +71,7 @@ export default function DamMonitoring() {
         </div>
       </div>
 
-      <div className="rounded-md border border-panelborder bg-panel2 p-4">
+      <div className="rounded-sm border border-panelborder bg-panel2 p-4">
         <h2 className="text-sm font-bold tracking-wide mb-3">DAM FAILURE RISK BREAKDOWN</h2>
         <div className="flex items-center gap-4 mb-3">
           <span className="text-3xl font-extrabold mono" style={{ color: statusColor(live.failure_risk.level) }}>

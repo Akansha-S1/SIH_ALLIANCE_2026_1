@@ -18,7 +18,7 @@ export default function AlertsPage() {
 
       <div className="space-y-3">
         {live.alerts.map((a) => (
-          <div key={a.id} className="rounded-md border p-4" style={{ borderColor: severityColor(a.severity) + "77", background: severityColor(a.severity) + "0d" }}>
+          <div key={a.id} className="rounded-sm border p-4" style={{ borderColor: severityColor(a.severity) + "77", background: severityColor(a.severity) + "0d" }}>
             <div className="flex items-center justify-between mb-2">
               <span className="font-extrabold text-sm" style={{ color: severityColor(a.severity) }}>
                 {a.severity === "CRITICAL" ? "🚨 " : "⚠ "} {a.title}

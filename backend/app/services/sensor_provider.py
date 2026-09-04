@@ -151,14 +151,20 @@ class DemoSensorProvider(SensorProvider):
             self.state.breach_onset_min = self.state.sim_minutes
         self.state.breach_stage = stage
 
-    def tick(self, dt_min: float, scenario: str) -> dict[str, float]:
+    def tick(self, dt_min: float, scenario: str, external_rainfall_mm_hr: float | None = None) -> dict[str, float]:
         s = self.state
         r = self._rng
         s.sim_minutes += dt_min
         prev = self._snapshot()
 
-        # rainfall
-        target_rain = self._rainfall_target(scenario)
+        # rainfall - in NORMAL scenario, a real live/cached reading (if available)
+        # drives the baseline instead of the fixed demo constant; any manually
+        # triggered scenario always takes full control so the judged demo flow
+        # stays reliable regardless of network reachability.
+        if scenario == "NORMAL" and external_rainfall_mm_hr is not None:
+            target_rain = external_rainfall_mm_hr
+        else:
+            target_rain = self._rainfall_target(scenario)
         s.rainfall_mm_hr += (target_rain - s.rainfall_mm_hr) * min(1.0, 0.12 * dt_min) + r.uniform(-0.6, 0.6)
         s.rainfall_mm_hr = _clamp(s.rainfall_mm_hr, 0, 90)
 

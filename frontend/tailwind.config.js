@@ -4,12 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        panel: "#0b1220",
-        panel2: "#0f1a2c",
-        panelborder: "#1c2b42",
-        ink: "#c9d6e8",
-        muted: "#7286a3",
-        accent: "#22d3ee",
+        bg: "rgb(var(--color-bg) / <alpha-value>)",
+        panel: "rgb(var(--color-panel) / <alpha-value>)",
+        panel2: "rgb(var(--color-panel2) / <alpha-value>)",
+        panelborder: "rgb(var(--color-panelborder) / <alpha-value>)",
+        ink: "rgb(var(--color-ink) / <alpha-value>)",
+        muted: "rgb(var(--color-muted) / <alpha-value>)",
+        accent: "rgb(var(--color-accent) / <alpha-value>)",
         safe: "#22c55e",
         warn: "#eab308",
         high: "#f97316",

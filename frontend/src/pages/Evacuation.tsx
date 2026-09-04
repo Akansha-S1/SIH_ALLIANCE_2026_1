@@ -26,7 +26,7 @@ export default function Evacuation() {
     <div className="p-5 space-y-5">
       <h1 className="text-lg font-extrabold tracking-wide">DYNAMIC EVACUATION ROUTING</h1>
 
-      <div className="rounded-md border border-panelborder bg-panel2 overflow-x-auto">
+      <div className="rounded-sm border border-panelborder bg-panel2 overflow-x-auto">
         <table className="w-full text-xs">
           <thead>
             <tr className="text-muted text-left border-b border-panelborder">
@@ -52,7 +52,7 @@ export default function Evacuation() {
       </div>
 
       {zonesWithArrival.length > 0 && (
-        <div className="rounded-md border border-panelborder bg-panel2 p-4">
+        <div className="rounded-sm border border-panelborder bg-panel2 p-4">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-sm font-bold tracking-wide">EVACUATION ROUTE PLANNER</h2>
             <select value={zoneId} onChange={(e) => setZoneId(e.target.value)} className="bg-panel border border-panelborder rounded px-2 py-1 text-xs">

@@ -37,7 +37,13 @@ def trend_label(delta: float, eps: float = 1e-6) -> str:
     return "STABLE"
 
 
-def build_sensor_cards(readings: dict[str, float], deltas: dict[str, float], histories: dict[str, list[float]]) -> list[dict]:
+def build_sensor_cards(
+    readings: dict[str, float],
+    deltas: dict[str, float],
+    histories: dict[str, list[float]],
+    sources: dict[str, str] | None = None,
+) -> list[dict]:
+    sources = sources or {}
     cards = []
     for sid, value in readings.items():
         if sid == "water_level_m":
@@ -59,6 +65,7 @@ def build_sensor_cards(readings: dict[str, float], deltas: dict[str, float], his
                 "normal_max": th.get("normal_max"),
                 "warning_max": th.get("warning_max"),
                 "sparkline": hist[-30:],
+                "source": sources.get(sid, "SIMULATED"),
             }
         )
     return cards

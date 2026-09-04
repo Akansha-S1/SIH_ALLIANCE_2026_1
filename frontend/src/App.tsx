@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
+import CitizenView from "./pages/CitizenView";
 import CommandCenter from "./pages/CommandCenter";
 import DamMonitoring from "./pages/DamMonitoring";
 import DigitalTwin from "./pages/DigitalTwin";
@@ -14,6 +15,7 @@ import Analytics from "./pages/Analytics";
 export default function App() {
   return (
     <Routes>
+      <Route path="/citizen" element={<CitizenView />} />
       <Route element={<Layout />}>
         <Route path="/" element={<CommandCenter />} />
         <Route path="/monitoring" element={<DamMonitoring />} />

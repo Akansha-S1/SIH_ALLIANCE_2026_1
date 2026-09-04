@@ -1,26 +1,47 @@
 {
   "id": "dam_01",
-  "name": "Jalrakshak Dam",
-  "type": "Gravity Dam (DEMO)",
-  "lat": 30.4500,
-  "lon": 78.7800,
-  "elevation_m": 830,
-  "crest_length_m": 540,
-  "dam_height_m": 130,
-  "max_water_level_m": 140,
-  "reservoir_capacity_mcm": 2600,
-  "spillway_capacity_cumecs": 9200,
-  "commissioned": "DEMO DATA - fictional structure for prototype purposes",
+  "name": "Valmikinagar Barrage",
+  "type": "Barrage / Diversion Structure on the Gandak River (DEMO model)",
+  "lat": 27.4394,
+  "lon": 83.9069,
+  "elevation_m": 95,
+  "crest_length_m": 900,
+  "dam_height_m": 12,
+  "max_water_level_m": 18,
+  "reservoir_capacity_mcm": 15,
+  "spillway_capacity_cumecs": 18000,
+  "commissioned": "REAL SITE: Valmikinagar Barrage, Gandak River, West Champaran, Bihar (27.4394N 83.9069E). Structural specs above are approximate/illustrative, not verified engineering records. Downstream zones/roads/shelters are a FICTIONAL demo layout translated to sit near this real location -- not surveyed Gandak floodplain GIS data.",
   "river": {
-    "name": "Sarita River (fictional)",
+    "name": "Gandak River",
     "path": [
-      [78.7800, 30.4500],
-      [78.7850, 30.4200],
-      [78.7900, 30.3950],
-      [78.7750, 30.3700],
-      [78.7600, 30.3400],
-      [78.7700, 30.3000],
-      [78.7550, 30.2600]
+      [
+        83.9069,
+        27.4394
+      ],
+      [
+        83.9119,
+        27.4094
+      ],
+      [
+        83.9169,
+        27.3844
+      ],
+      [
+        83.9019,
+        27.3594
+      ],
+      [
+        83.8869,
+        27.3294
+      ],
+      [
+        83.8969,
+        27.2894
+      ],
+      [
+        83.8819,
+        27.2494
+      ]
     ]
   }
 }

@@ -2,9 +2,9 @@
   {
     "zone_id": "zone_a",
     "name": "Zone A - Rampur Village",
-    "lat": 30.4100,
-    "lon": 78.7870,
-    "elevation_m": 780,
+    "lat": 27.3994,
+    "lon": 83.9139,
+    "elevation_m": 88,
     "distance_from_dam_km": 4.0,
     "population": 3200,
     "vulnerable_fraction": 0.22
@@ -12,9 +12,9 @@
   {
     "zone_id": "zone_b",
     "name": "Zone B - Devnagar Town",
-    "lat": 30.3750,
-    "lon": 78.7820,
-    "elevation_m": 740,
+    "lat": 27.3644,
+    "lon": 83.9089,
+    "elevation_m": 80,
     "distance_from_dam_km": 9.0,
     "population": 8420,
     "vulnerable_fraction": 0.28
@@ -22,9 +22,9 @@
   {
     "zone_id": "zone_c",
     "name": "Zone C - Kotwara",
-    "lat": 30.3250,
-    "lon": 78.7650,
-    "elevation_m": 700,
+    "lat": 27.3144,
+    "lon": 83.8919,
+    "elevation_m": 72,
     "distance_from_dam_km": 15.0,
     "population": 5100,
     "vulnerable_fraction": 0.19
@@ -32,9 +32,9 @@
   {
     "zone_id": "zone_d",
     "name": "Zone D - Ganeshpur",
-    "lat": 30.2750,
-    "lon": 78.7600,
-    "elevation_m": 650,
+    "lat": 27.2644,
+    "lon": 83.8869,
+    "elevation_m": 62,
     "distance_from_dam_km": 24.0,
     "population": 2200,
     "vulnerable_fraction": 0.24
