@@ -1,0 +1,72 @@
+{
+  "_note": "DEMO/DEMONSTRATION CONFIGURATION ONLY. Thresholds and weights below are illustrative prototype values for the JALRAKSHAK AI hackathon demo. They are NOT derived from real dam engineering safety standards (e.g. IS codes, ICOLD guidelines) and must not be used for real operational decisions.",
+
+  "sensors": {
+    "water_level_pct":     {"unit": "%",    "normal_max": 80,  "warning_max": 90,  "critical_max": 999},
+    "reservoir_pressure_kpa": {"unit": "kPa", "normal_max": 900, "warning_max": 1100, "critical_max": 999999},
+    "pore_pressure_kpa":   {"unit": "kPa",  "normal_max": 160, "warning_max": 200, "critical_max": 999999},
+    "concrete_strain":     {"unit": "ε", "normal_max": 0.00035, "warning_max": 0.00055, "critical_max": 999},
+    "deformation_mm":      {"unit": "mm",   "normal_max": 5.0,  "warning_max": 8.0,  "critical_max": 999},
+    "crack_width_mm":      {"unit": "mm",   "normal_max": 0.5,  "warning_max": 1.0,  "critical_max": 999},
+    "seepage_lps":         {"unit": "L/s",  "normal_max": 12,   "warning_max": 22,   "critical_max": 999},
+    "vibration_g":         {"unit": "g",    "normal_max": 0.12, "warning_max": 0.25, "critical_max": 999},
+    "temperature_c":       {"unit": "°C", "normal_max": 32,  "warning_max": 38,  "critical_max": 999},
+    "rainfall_mm_hr":      {"unit": "mm/hr","normal_max": 10,   "warning_max": 30,   "critical_max": 999}
+  },
+
+  "health_weights": {
+    "water_level_pct": 0.16,
+    "reservoir_pressure_kpa": 0.10,
+    "pore_pressure_kpa": 0.14,
+    "concrete_strain": 0.12,
+    "deformation_mm": 0.16,
+    "crack_width_mm": 0.12,
+    "seepage_lps": 0.10,
+    "vibration_g": 0.06,
+    "rainfall_mm_hr": 0.04
+  },
+
+  "health_bands": [
+    {"min": 92, "max": 100, "label": "NORMAL"},
+    {"min": 75, "max": 91,  "label": "MONITOR"},
+    {"min": 50, "max": 74,  "label": "WARNING"},
+    {"min": 25, "max": 49,  "label": "HIGH RISK"},
+    {"min": 0,  "max": 24,  "label": "CRITICAL"}
+  ],
+
+  "failure_risk_weights": {
+    "high_reservoir_level": 18,
+    "rapid_level_rise": 14,
+    "pore_pressure_anomaly": 12,
+    "deformation_anomaly": 15,
+    "crack_growth": 8,
+    "seepage_increase": 5,
+    "rainfall_intensity": 6,
+    "vibration_anomaly": 7,
+    "structural_health_deficit": 15
+  },
+
+  "failure_risk_bands": [
+    {"min": 0,  "max": 24,  "label": "LOW"},
+    {"min": 25, "max": 49,  "label": "MODERATE"},
+    {"min": 50, "max": 74,  "label": "HIGH"},
+    {"min": 75, "max": 100, "label": "CRITICAL"}
+  ],
+
+  "time_to_safety_bands_min": [
+    {"min": -999, "max": 5,  "label": "CRITICAL"},
+    {"min": 5,    "max": 15, "label": "HIGH RISK"},
+    {"min": 15,   "max": 30, "label": "WARNING"},
+    {"min": 30,   "max": 999,"label": "SAFE"}
+  ],
+
+  "anomaly_zscore_threshold": 2.5,
+
+  "flood_model": {
+    "_note": "Simplified spatial propagation model for DEMO purposes only. NOT a validated hydrodynamic (HEC-RAS / 2D shallow-water) simulation.",
+    "base_wave_speed_kmph": 22,
+    "partial_breach_multiplier": 0.55,
+    "major_breach_multiplier": 1.0,
+    "attenuation_per_km": 0.018
+  }
+}

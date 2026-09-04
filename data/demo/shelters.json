@@ -1,0 +1,38 @@
+[
+  {
+    "shelter_id": "shelter_01",
+    "name": "Shelter 01 - Rampur Highland School",
+    "lat": 30.4050,
+    "lon": 78.8100,
+    "elevation_m": 860,
+    "capacity": 1200,
+    "occupancy": 340
+  },
+  {
+    "shelter_id": "shelter_02",
+    "name": "Shelter 02 - Devnagar Community Hall",
+    "lat": 30.3700,
+    "lon": 78.8050,
+    "elevation_m": 830,
+    "capacity": 3000,
+    "occupancy": 900
+  },
+  {
+    "shelter_id": "shelter_03",
+    "name": "Shelter 03 - Kotwara Relief Camp",
+    "lat": 30.3200,
+    "lon": 78.7950,
+    "elevation_m": 810,
+    "capacity": 2500,
+    "occupancy": 1780
+  },
+  {
+    "shelter_id": "shelter_04",
+    "name": "Shelter 04 - Ganeshpur Govt. College",
+    "lat": 30.2700,
+    "lon": 78.7900,
+    "elevation_m": 790,
+    "capacity": 1800,
+    "occupancy": 520
+  }
+]

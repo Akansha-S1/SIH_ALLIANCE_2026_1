@@ -1,0 +1,14 @@
+[
+  {"road_id": "R01", "name": "Dam Access Road", "start_node": "dam_01", "end_node": "zone_a", "distance_km": 4.0, "speed_kmph": 40, "min_elevation_m": 790, "is_bridge": false},
+  {"road_id": "R02", "name": "Riverside Road A-B", "start_node": "zone_a", "end_node": "zone_b", "distance_km": 5.5, "speed_kmph": 50, "min_elevation_m": 775, "is_bridge": false},
+  {"road_id": "R03", "name": "Rampur Hill Road", "start_node": "zone_a", "end_node": "shelter_01", "distance_km": 3.0, "speed_kmph": 35, "min_elevation_m": 830, "is_bridge": false},
+  {"road_id": "R04", "name": "Devnagar Shelter Link", "start_node": "zone_b", "end_node": "shelter_02", "distance_km": 3.5, "speed_kmph": 40, "min_elevation_m": 800, "is_bridge": false},
+  {"road_id": "R05", "name": "Bridge 04 (B-C River Crossing)", "start_node": "zone_b", "end_node": "zone_c", "distance_km": 6.5, "speed_kmph": 45, "min_elevation_m": 735, "is_bridge": true},
+  {"road_id": "R06", "name": "Devnagar-Rampur Alt Road", "start_node": "zone_b", "end_node": "shelter_01", "distance_km": 6.0, "speed_kmph": 35, "min_elevation_m": 810, "is_bridge": false},
+  {"road_id": "R07", "name": "Kotwara Shelter Link", "start_node": "zone_c", "end_node": "shelter_03", "distance_km": 4.0, "speed_kmph": 45, "min_elevation_m": 780, "is_bridge": false},
+  {"road_id": "R08", "name": "Kotwara-Ganeshpur Road", "start_node": "zone_c", "end_node": "zone_d", "distance_km": 9.0, "speed_kmph": 55, "min_elevation_m": 695, "is_bridge": false},
+  {"road_id": "R09", "name": "Kotwara-Devnagar Alt Road", "start_node": "zone_c", "end_node": "shelter_02", "distance_km": 8.0, "speed_kmph": 40, "min_elevation_m": 770, "is_bridge": false},
+  {"road_id": "R10", "name": "Ganeshpur Shelter Link", "start_node": "zone_d", "end_node": "shelter_04", "distance_km": 3.5, "speed_kmph": 40, "min_elevation_m": 760, "is_bridge": false},
+  {"road_id": "R11", "name": "Highland Connector S2-S3", "start_node": "shelter_02", "end_node": "shelter_03", "distance_km": 7.0, "speed_kmph": 50, "min_elevation_m": 800, "is_bridge": false},
+  {"road_id": "R12", "name": "Highland Connector S3-S4", "start_node": "shelter_03", "end_node": "shelter_04", "distance_km": 8.5, "speed_kmph": 50, "min_elevation_m": 780, "is_bridge": false}
+]
