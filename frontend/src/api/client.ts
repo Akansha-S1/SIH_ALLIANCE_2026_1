@@ -23,6 +23,16 @@ async function post<T>(path: string, body?: unknown): Promise<T> {
   return res.json();
 }
 
+async function patch<T>(path: string, body: unknown): Promise<T> {
+  const res = await fetch(`${API_BASE}${path}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) throw new Error(`PATCH ${path} failed: ${res.status}`);
+  return res.json();
+}
+
 export const api = {
   damStatus: () => get<any>("/api/dam/status"),
   zones: () => get<{ zones: any[] }>("/api/zones"),
@@ -34,6 +44,13 @@ export const api = {
   routesForZone: (zoneId: string) => get<any>(`/api/routes?zone_id=${zoneId}`),
   simulationState: () => get<any>("/api/simulation/state"),
   scenarios: () => get<{ scenarios: string[]; current: string }>("/api/simulation/scenarios"),
+
+  hotspotsNear: (zoneId: string) => get<{ hotspots: any[] }>(`/api/hotspots?zone_id=${zoneId}&only_available=true`),
+  createHotspot: (body: { type: string; lat: number; lon: number; capacity: number; notes: string }) =>
+    post<{ hotspot: any; owner_token: string }>("/api/hotspots", body),
+  updateHotspot: (id: string, body: { owner_token: string; capacity?: number; occupancy?: number; status?: string }) =>
+    patch<{ hotspot: any }>(`/api/hotspots/${id}`, body),
+  getHotspot: (id: string) => get<{ hotspot: any }>(`/api/hotspots/${id}`),
 
   start: () => post("/api/simulation/start"),
   pause: () => post("/api/simulation/pause"),

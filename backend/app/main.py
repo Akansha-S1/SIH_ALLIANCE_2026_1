@@ -17,7 +17,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import alerts, analytics, dam, flood, geo_zones, simulation
+from app.api import alerts, analytics, dam, flood, geo_zones, hotspots, simulation
 from app.services.scenario_engine import engine
 from app.websocket.manager import manager
 
@@ -55,6 +55,7 @@ app.include_router(geo_zones.router)
 app.include_router(alerts.router)
 app.include_router(simulation.router)
 app.include_router(analytics.router)
+app.include_router(hotspots.router)
 
 
 @app.get("/")
